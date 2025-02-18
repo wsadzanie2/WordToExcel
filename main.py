@@ -54,7 +54,7 @@ else:
         if not (isfile(input_file) and input_file.endswith(".docx")): # type: ignore
             raise Exception("Plik nie jest plikiem .docx")
 
-        output_file = easygui.filesavebox(filetypes="*.xlsx", default="*.xlsx", title="Wybierz plik Worda (.xlsx)")
+        output_file = easygui.filesavebox(filetypes="*.xlsx", default=f"{input_file[:-5]}.xlsx", title="Wybierz plik Worda (.xlsx)")
         if output_file is None:
             exit()
         box = easygui.ccbox(msg=f"{input_file.split(PATH_SEP)[-1]} -> {output_file.split(PATH_SEP)[-1]}", choices=('Dobrze jest', 'Jeszcze raz')) # type: ignore
