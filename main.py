@@ -1,9 +1,13 @@
+import os
 from os.path import isfile
 from docx.document import Document as Doc_type
 from docx.api import Document
 import xlsxwriter
 
-PATH_SEP = "/"
+if os.name == 'nt':
+    PATH_SEP = "\\"
+else:
+    PATH_SEP = "/"
 input_file = ''
 output_file = ''
 
