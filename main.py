@@ -34,8 +34,8 @@ if TTY:
             if input("Chcesz spróbować? (t/N)") in ['t', 'T', 'y', 'Y', 'tak', 'yes']:
                 break
             continue
-        if not isfile(input_file):
-            with open(input_file, "a"):
+        if not isfile(output_file):
+            with open(output_file, "a"):
                 pass
         break
 
@@ -57,8 +57,6 @@ else:
         output_file = easygui.filesavebox(filetypes="*.xlsx", default="*.xlsx", title="Wybierz plik Worda (.xlsx)")
         if output_file is None:
             exit()
-        if not (isfile(output_file) and output_file.endswith(".xlsx")):
-            raise Exception("Plik nie jest plikiem .xlsx")
         box = easygui.ccbox(msg=f"{input_file.split(PATH_SEP)[-1]} -> {output_file.split(PATH_SEP)[-1]}", choices=('Dobrze jest', 'Jeszcze raz')) # type: ignore
         if box:
             loop = False
