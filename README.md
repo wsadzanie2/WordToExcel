@@ -5,3 +5,5 @@ Required libraries:
 - python-docx
 - xlsxwriter
 - easygui
+Optional libraries:
+- pdf2docx (for .pdf support)
